@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Section } from './components/Section';
 import { AbilityCard } from './components/AbilityCard';
@@ -8,7 +8,12 @@ import { siteData } from './data';
 import { resolveGoogleDriveLink } from './utils';
 
 const App: React.FC = () => {
+  const [isInitializing, setIsInitializing] = useState(false);
   const mapImage = resolveGoogleDriveLink(siteData.world.mapImage || "https://picsum.photos/600/400?grayscale&blur=2");
+
+  const handleInitialize = () => {
+    setIsInitializing(true);
+  };
 
   return (
     <div className="bg-slate-900 min-h-screen text-slate-200 selection:bg-cyan-500 selection:text-white">
@@ -77,11 +82,49 @@ const App: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-header text-red-400 mb-6 tracking-wide">
             {siteData.cta.text}
           </h2>
-          <button className="px-10 py-4 bg-red-600 hover:bg-red-500 text-white font-bold rounded shadow-lg transform hover:scale-105 transition-all duration-300 font-pixel text-sm md:text-base">
+          <button 
+            onClick={handleInitialize}
+            className="px-10 py-4 bg-red-600 hover:bg-red-500 text-white font-bold rounded shadow-lg transform hover:scale-105 transition-all duration-300 font-pixel text-sm md:text-base cursor-pointer"
+          >
             {siteData.cta.buttonLabel}
           </button>
         </div>
       </Section>
+
+      {/* Video Modal Overlay */}
+      {isInitializing && siteData.cta.video && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 backdrop-blur-md p-4 animate-in fade-in duration-300">
+           {/* Tech Border Decorations */}
+           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+           <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+           
+           <div className="relative w-full max-w-5xl aspect-video bg-black border-2 border-cyan-500/50 rounded-lg shadow-[0_0_100px_rgba(6,182,212,0.2)] flex flex-col">
+              {/* Header for Modal */}
+              <div className="bg-slate-900/80 border-b border-cyan-500/30 p-2 flex justify-between items-center px-4">
+                  <span className="font-mono text-cyan-400 text-xs tracking-widest animate-pulse">[ SYSTEM_ALERT: INITIALIZING_SEQUENCE... ]</span>
+                  <button 
+                    onClick={() => setIsInitializing(false)}
+                    className="text-slate-400 hover:text-white hover:bg-red-500/20 rounded p-1 transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+              </div>
+
+              {/* Video Iframe */}
+              <div className="relative flex-grow bg-black">
+                <iframe 
+                    src={`https://drive.google.com/file/d/${siteData.cta.video}/preview`}
+                    className="absolute inset-0 w-full h-full"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    title="Sequence Initialization"
+                ></iframe>
+              </div>
+           </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-slate-950 py-8 text-center border-t border-slate-800">

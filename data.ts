@@ -106,6 +106,7 @@ export const siteData = {
   ] as Companion[],
   cta: {
     text: "The journey to optimize an entire fantasy world has just begun!",
-    buttonLabel: "Initialize Sequence"
+    buttonLabel: "Initialize Sequence",
+    video: "1-Abk5OCLBJj_wf_0MqcscXeDm3bEjMch"
   }
 };
