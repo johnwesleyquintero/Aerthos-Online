@@ -25,7 +25,7 @@ export const siteData = {
     subtitle: "My Cheat Skill is Optimization!",
     description: "A tale of a modern-day strategist summoned to a world of magic, guilds, and ancient systems ripe for an upgrade.",
     // Using the raw Google Drive ID for optimization
-    heroImage: "1bhts40yK9Evnuj8JkQnujXTDM-Mzmx1Q", 
+    heroImage: "https://drive.google.com/file/d/1iJqBUlBwwVGhylobYqob5s6SEumdL1S5/view?usp=drive_link", 
     backgroundImage: "1bhts40yK9Evnuj8JkQnujXTDM-Mzmx1Q", // Background for the top section
   },
   story: {
@@ -80,28 +80,28 @@ export const siteData = {
       name: "WesAI",
       role: "The Generalist Codex",
       description: "A hyper-intelligent AI partner acting as a force multiplier. Handles strategic calculations, system diagnostics, and operational support.",
-      image: "https://picsum.photos/200/200?grayscale"
+      image: "https://drive.google.com/file/d/1rf2_vOyB7qougsdIMrNIU3jEsKMtGMql/view?usp=sharing"
     },
     {
       id: "c1",
       name: "Selle",
       role: "The Arcane Coder",
       description: "A brilliant elven mage who understands the 'logic' of magic but lacked the 'system' to apply it efficiently.",
-      image: "https://picsum.photos/200/200?random=1"
+      image: "https://drive.google.com/file/d/1TPjs7Ry8MKMAACqeiQpuRFMh0dZEuvL4/view?usp=sharing"
     },
     {
       id: "c2",
       name: "Sir Kael",
       role: "The Data Knight",
       description: "A stoic knight who was frustrated by inefficient patrol routes and supply chain issues.",
-      image: "https://picsum.photos/200/200?random=2"
+      image: "https://drive.google.com/file/d/1W_otebixkjKDMfCsYpw_bK7p0HN11rbm/view?usp=drive_link"
     },
     {
       id: "c3",
       name: "Mina",
       role: "The Market Analyst",
       description: "A sharp-witted merchant who knew market trends but struggled to scale her operations.",
-      image: "https://picsum.photos/200/200?random=3"
+      image: "https://drive.google.com/file/d/1o2-hn8jGVI7-K7dJ7J2gHaYfZ6XpBf1V/view?usp=drive_link"
     }
   ] as Companion[],
   cta: {
