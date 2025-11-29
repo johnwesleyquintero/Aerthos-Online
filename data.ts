@@ -1,5 +1,3 @@
-
-
 // This file serves as the "Database" for your website.
 // You can paste your Google Drive image links directly into the 'image' fields.
 // The system automatically converts Drive links/IDs to viewable images.
@@ -100,6 +98,13 @@ export const siteData = {
     }
   ] as Ability[],
   companions: [
+    {
+      id: "c-wesley",
+      name: "Wesley",
+      role: "The System Architect",
+      description: "The irregular from Earth. Armed with modern strategic knowledge and the unique ability to 'debug' the world's magical systems.",
+      image: "https://drive.google.com/file/d/1iJqBUlBwwVGhylobYqob5s6SEumdL1S5/view?usp=drive_link" // Reusing hero image for consistency
+    },
     {
       id: "c0",
       name: "WesAI",
