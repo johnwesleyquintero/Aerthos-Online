@@ -32,55 +32,65 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20 md:pt-0">
         {/* Avatar / Core Image */}
         <div className="mb-8 relative inline-block group">
           <div className="absolute inset-0 bg-cyan-500 rounded-full blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 animate-pulse"></div>
           <img 
             src={avatarImage} 
             alt="System Avatar" 
-            className="w-40 h-40 md:w-56 md:h-56 rounded-full border-4 border-slate-800 relative z-10 object-cover shadow-2xl ring-2 ring-cyan-500/50"
+            className="w-32 h-32 md:w-56 md:h-56 rounded-full border-4 border-slate-800 relative z-10 object-cover shadow-2xl ring-2 ring-cyan-500/50"
           />
           <div className="absolute -bottom-2 -right-2 bg-slate-900 text-cyan-400 border border-cyan-500 text-xs px-2 py-1 rounded font-mono z-20">
             LVL. 99
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-header tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-rose-500 to-amber-500 mb-4 drop-shadow-2xl">
+        <h1 className="text-4xl md:text-7xl font-header tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-rose-500 to-amber-500 mb-4 drop-shadow-2xl">
           {hero.title}
         </h1>
         
-        <p className="text-xl md:text-2xl text-cyan-200 font-pixel mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+        <p className="text-lg md:text-2xl text-cyan-200 font-pixel mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
           {hero.subtitle}
         </p>
 
-        <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed border-l-4 border-cyan-500 pl-4 bg-slate-800/30 p-4 rounded-r-lg backdrop-blur-sm">
+        <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed border-l-4 border-cyan-500 pl-4 bg-slate-800/30 p-4 rounded-r-lg backdrop-blur-sm">
           {hero.description}
         </p>
 
-        <div className="mt-12 flex flex-col md:flex-row gap-4 justify-center items-center">
-            <a href="#story" className="w-full md:w-auto px-8 py-3 bg-slate-800 border border-slate-600 hover:border-cyan-400 text-cyan-400 font-bold rounded hover:bg-slate-700 transition-all duration-300">
-                Read Data Logs
-            </a>
-            <a href="#abilities" className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] transition-all duration-300">
+        <div className="mt-10 flex flex-col md:flex-row gap-4 justify-center items-center flex-wrap">
+            {/* Primary App Link */}
+            {hero.appUrl && (
+              <a 
+                href={hero.appUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded shadow-[0_0_20px_rgba(79,70,229,0.5)] hover:shadow-[0_0_30px_rgba(79,70,229,0.8)] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+              >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                  {hero.appLabel}
+              </a>
+            )}
+
+            <a href="#abilities" className="w-full md:w-auto px-8 py-4 bg-slate-800 border border-cyan-500/30 hover:border-cyan-400 text-cyan-400 font-bold rounded hover:bg-slate-700 transition-all duration-300">
                 View Specs
             </a>
+            
             {hero.loreLink && (
               <a 
                 href={hero.loreLink} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-full md:w-auto px-8 py-3 bg-slate-900/80 border border-purple-500/50 hover:border-purple-400 text-purple-400 font-bold rounded hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="w-full md:w-auto px-8 py-4 bg-slate-900/80 border border-purple-500/50 hover:border-purple-400 text-purple-400 font-bold rounded hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2 group"
               >
                   <span>Real Life Lore</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             )}
         </div>
       </div>
       
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-500">
+      <div className="absolute bottom-24 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-500">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>

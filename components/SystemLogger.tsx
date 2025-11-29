@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 interface Log {
@@ -17,6 +18,7 @@ export const SystemLogger: React.FC = () => {
         { msg: "Mana density increasing.", type: 'info' },
         { msg: "System latency minimal.", type: 'success' },
         { msg: "Background processing: 100%", type: 'info' },
+        { msg: "Synchronizing with real-world timeline...", type: 'info' },
     ];
 
     const addLog = () => {
@@ -46,7 +48,7 @@ export const SystemLogger: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed top-20 right-4 z-40 flex flex-col gap-2 w-64 pointer-events-none">
+    <div className="fixed top-24 right-4 z-40 flex flex-col gap-2 w-64 pointer-events-none hidden md:flex">
         {logs.map((log) => (
             <div 
                 key={log.id}
