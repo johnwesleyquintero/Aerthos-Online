@@ -84,7 +84,7 @@ export const siteData = {
     },
     {
       id: "c1",
-      name: "Lyra",
+      name: "Selle",
       role: "The Arcane Coder",
       description: "A brilliant elven mage who understands the 'logic' of magic but lacked the 'system' to apply it efficiently.",
       image: "https://picsum.photos/200/200?random=1"
