@@ -1,9 +1,10 @@
-
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Section } from './components/Section';
 import { AbilityCard } from './components/AbilityCard';
 import { CompanionCard } from './components/CompanionCard';
+import { SystemHud } from './components/SystemHud';
+import { SystemLogger } from './components/SystemLogger';
 import { siteData } from './data';
 import { resolveGoogleDriveLink } from './utils';
 
@@ -16,7 +17,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-slate-900 min-h-screen text-slate-200 selection:bg-cyan-500 selection:text-white">
+    <div className="bg-slate-900 min-h-screen text-slate-200 selection:bg-cyan-500 selection:text-white pb-20 md:pb-24">
+      {/* System UI Elements */}
+      <SystemHud />
+      <SystemLogger />
+
       {/* Hero / Header */}
       <Header />
 
@@ -40,7 +45,7 @@ const App: React.FC = () => {
                 ))}
             </div>
             <div className="order-1 md:order-2">
-                <div className="aspect-video rounded-lg overflow-hidden border-2 border-slate-700 shadow-[0_0_20px_rgba(59,130,246,0.3)] bg-black relative">
+                <div className="aspect-video rounded-lg overflow-hidden border-2 border-slate-700 shadow-[0_0_20px_rgba(59,130,246,0.3)] bg-black relative group">
                    {/* Fallback text if image breaks or loads slowly */}
                    <div className="absolute inset-0 flex items-center justify-center text-slate-600 font-pixel text-xs z-0">
                         [ SYSTEM: RENDERING_MAP ]
@@ -48,8 +53,10 @@ const App: React.FC = () => {
                    <img 
                       src={mapImage} 
                       alt="World Map" 
-                      className="w-full h-full object-cover relative z-10" 
+                      className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-105" 
                    />
+                   {/* Map Overlay Grid */}
+                   <div className="absolute inset-0 z-20 pointer-events-none opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
                 </div>
             </div>
         </div>
@@ -93,7 +100,7 @@ const App: React.FC = () => {
 
       {/* Video Modal Overlay */}
       {isInitializing && siteData.cta.video && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 backdrop-blur-md p-4 animate-in fade-in duration-300">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/95 backdrop-blur-md p-4 animate-in fade-in duration-300">
            {/* Tech Border Decorations */}
            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
            <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
