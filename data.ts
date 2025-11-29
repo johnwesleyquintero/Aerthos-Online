@@ -24,8 +24,8 @@ export const siteData = {
     subtitle: "My Cheat Skill is Optimization!",
     description: "A tale of a modern-day strategist summoned to a world of magic, guilds, and ancient systems ripe for an upgrade.",
     // Using the raw Google Drive ID for optimization
-    heroImage: "https://drive.google.com/file/d/1bhts40yK9Evnuj8JkQnujXTDM-Mzmx1Q/view?usp=drive_link", 
-    backgroundImage: "1bhts40yK9Evnuj8JkQnujXTDM-Mzmx1Q", // Background for the top section
+    heroImage: "https://drive.google.com/file/d/1NZWAa-O1fsuQaHDy-SKY4CVfO5DB-r2L/view?usp=drive_link", 
+    backgroundImage: "1NZWAa-O1fsuQaHDy-SKY4CVfO5DB-r2L", // Background for the top section
     loreLink: "https://cycleofrejection.netlify.app/", // Link to music/real life lore
     appUrl: "https://wesai-genx.vercel.app/", // Link to the real App
     appLabel: "Access Generalist Codex"
