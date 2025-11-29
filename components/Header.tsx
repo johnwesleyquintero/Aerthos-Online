@@ -1,16 +1,21 @@
+
 import React from 'react';
 import { siteData } from '../data';
 import { ParticleBackground } from './ParticleBackground';
+import { resolveGoogleDriveLink } from '../utils';
 
 export const Header: React.FC = () => {
   const { hero } = siteData;
+
+  const bgImage = resolveGoogleDriveLink(hero.backgroundImage);
+  const avatarImage = resolveGoogleDriveLink(hero.heroImage);
 
   return (
     <header className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={hero.backgroundImage} 
+          src={bgImage} 
           alt="Background" 
           className="w-full h-full object-cover opacity-30"
         />
@@ -32,7 +37,7 @@ export const Header: React.FC = () => {
         <div className="mb-8 relative inline-block group">
           <div className="absolute inset-0 bg-cyan-500 rounded-full blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 animate-pulse"></div>
           <img 
-            src={hero.heroImage} 
+            src={avatarImage} 
             alt="System Avatar" 
             className="w-40 h-40 md:w-56 md:h-56 rounded-full border-4 border-slate-800 relative z-10 object-cover shadow-2xl ring-2 ring-cyan-500/50"
           />

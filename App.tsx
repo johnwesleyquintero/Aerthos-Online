@@ -1,11 +1,15 @@
+
 import React from 'react';
 import { Header } from './components/Header';
 import { Section } from './components/Section';
 import { AbilityCard } from './components/AbilityCard';
 import { CompanionCard } from './components/CompanionCard';
 import { siteData } from './data';
+import { resolveGoogleDriveLink } from './utils';
 
 const App: React.FC = () => {
+  const mapImage = resolveGoogleDriveLink(siteData.world.mapImage || "https://picsum.photos/600/400?grayscale&blur=2");
+
   return (
     <div className="bg-slate-900 min-h-screen text-slate-200 selection:bg-cyan-500 selection:text-white">
       {/* Hero / Header */}
@@ -32,13 +36,15 @@ const App: React.FC = () => {
             </div>
             <div className="order-1 md:order-2">
                 <div className="aspect-video rounded-lg overflow-hidden border-2 border-slate-700 shadow-[0_0_20px_rgba(59,130,246,0.3)] bg-black relative">
-                   <div className="absolute inset-0 flex items-center justify-center text-slate-600 font-pixel text-xs">
-                        [ SYSTEM: WORLD_MAP_RENDER_FAILED ]
-                        <br />
-                        [ MISSING_ASSET_LINK ]
+                   {/* Fallback text if image breaks or loads slowly */}
+                   <div className="absolute inset-0 flex items-center justify-center text-slate-600 font-pixel text-xs z-0">
+                        [ SYSTEM: RENDERING_MAP ]
                    </div>
-                   {/* Placeholder if user adds image later */}
-                   <img src="https://picsum.photos/600/400?grayscale&blur=2" alt="World Map" className="w-full h-full object-cover opacity-50 mix-blend-overlay hover:opacity-80 transition-opacity duration-500" />
+                   <img 
+                      src={mapImage} 
+                      alt="World Map" 
+                      className="w-full h-full object-cover opacity-50 mix-blend-overlay hover:opacity-80 transition-opacity duration-500 relative z-10" 
+                   />
                 </div>
             </div>
         </div>

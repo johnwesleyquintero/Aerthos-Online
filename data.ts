@@ -1,7 +1,7 @@
 
 // This file serves as the "Database" for your website.
 // You can paste your Google Drive image links directly into the 'image' fields.
-// Make sure your Drive images are set to "Anyone with the link" and use a direct link converter if needed.
+// The system automatically converts Drive links/IDs to viewable images.
 
 export interface Ability {
   id: string;
@@ -24,9 +24,9 @@ export const siteData = {
     title: "Reborn as a System Architect",
     subtitle: "My Cheat Skill is Optimization!",
     description: "A tale of a modern-day strategist summoned to a world of magic, guilds, and ancient systems ripe for an upgrade.",
-    // Replace with your specific hero image URL
-    heroImage: "https://picsum.photos/400/400", 
-    backgroundImage: "https://picsum.photos/1920/1080?grayscale", // Background for the top section
+    // Using the raw Google Drive ID for optimization
+    heroImage: "1bhts40yK9Evnuj8JkQnujXTDM-Mzmx1Q", 
+    backgroundImage: "1bhts40yK9Evnuj8JkQnujXTDM-Mzmx1Q", // Background for the top section
   },
   story: {
     title: "The Journey Begins",
@@ -37,6 +37,8 @@ export const siteData = {
   },
   world: {
     title: "Welcome to Aerthos",
+    // Optional: Add a Google Drive link here for your specific world map
+    mapImage: "https://picsum.photos/600/400?grayscale&blur=2", 
     content: [
       "Aerthos is a sprawling land of floating islands, bustling trade cities, and perilous dungeons. Ruled by a council of elemental monarchs and overseen by a fractured 'System of the World' (a cosmic backend that's been buggy for centuries), it's a place where adventurers thrive, mages wield raw power, and ancient evils stir.",
       "Our hero quickly discovered that his unique Earthly skills – strategic thinking, pattern recognition, and an innate desire to build scalable systems – were far more potent than any spell or sword in this new reality."

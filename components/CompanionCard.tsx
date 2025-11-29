@@ -1,17 +1,21 @@
+
 import React from 'react';
 import { Companion } from '../data';
+import { resolveGoogleDriveLink } from '../utils';
 
 interface CompanionCardProps {
   companion: Companion;
 }
 
 export const CompanionCard: React.FC<CompanionCardProps> = ({ companion }) => {
+  const imageUrl = resolveGoogleDriveLink(companion.image);
+
   return (
     <div className="relative group overflow-hidden rounded-xl bg-slate-900 border border-slate-700 hover:border-cyan-500 transition-colors duration-300">
       {/* Image Container */}
       <div className="h-48 w-full overflow-hidden relative">
         <img 
-          src={companion.image} 
+          src={imageUrl} 
           alt={companion.name} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100"
         />
