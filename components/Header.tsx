@@ -1,5 +1,6 @@
 import React from 'react';
 import { siteData } from '../data';
+import { ParticleBackground } from './ParticleBackground';
 
 export const Header: React.FC = () => {
   const { hero } = siteData;
@@ -19,6 +20,11 @@ export const Header: React.FC = () => {
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }}
         ></div>
+        
+        {/* Animated Particles - High density for Hero */}
+        <div className="absolute inset-0 z-0">
+            <ParticleBackground count={80} color="6, 182, 212" className="w-full h-full" />
+        </div>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">

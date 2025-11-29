@@ -1,4 +1,5 @@
 import React from 'react';
+import { ParticleBackground } from './ParticleBackground';
 
 interface SectionProps {
   id: string;
@@ -14,6 +15,15 @@ export const Section: React.FC<SectionProps> = ({ id, title, children, className
       id={id} 
       className={`py-16 md:py-24 px-4 sm:px-6 relative overflow-hidden ${isAlternate ? 'bg-slate-900/50' : 'bg-transparent'} ${className}`}
     >
+      {/* Subtle Background Particles */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <ParticleBackground 
+          count={30} 
+          color={isAlternate ? "99, 102, 241" : "148, 163, 184"} // Indigo for alternate, Slate for normal
+          className="w-full h-full" 
+        />
+      </div>
+
       <div className="max-w-6xl mx-auto relative z-10">
         {title && (
           <div className="mb-12 text-center">
@@ -27,8 +37,8 @@ export const Section: React.FC<SectionProps> = ({ id, title, children, className
       </div>
       
       {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent opacity-50"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent opacity-50 z-10"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent opacity-50 z-10"></div>
     </section>
   );
 };
