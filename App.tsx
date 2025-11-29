@@ -6,6 +6,7 @@ import { AbilityCard } from './components/AbilityCard';
 import { CompanionCard } from './components/CompanionCard';
 import { SystemHud } from './components/SystemHud';
 import { SystemLogger } from './components/SystemLogger';
+import { AudioController } from './components/AudioController';
 import { siteData } from './data';
 import { resolveGoogleDriveLink } from './utils';
 
@@ -22,6 +23,7 @@ const App: React.FC = () => {
       {/* System UI Elements */}
       <SystemHud />
       <SystemLogger />
+      <AudioController />
 
       {/* Hero / Header */}
       <Header />

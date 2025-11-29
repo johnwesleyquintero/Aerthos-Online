@@ -1,4 +1,5 @@
 
+
 // This file serves as the "Database" for your website.
 // You can paste your Google Drive image links directly into the 'image' fields.
 // The system automatically converts Drive links/IDs to viewable images.
@@ -30,6 +31,26 @@ export const siteData = {
     loreLink: "https://cycleofrejection.netlify.app/", // Link to music/real life lore
     appUrl: "https://wesai-genx.vercel.app/", // Link to the real App
     appLabel: "Access Generalist Codex"
+  },
+  soundtrack: {
+    tracks: [
+      {
+        title: "The Advance Scout (The Cynic's Eyes)",
+        src: "https://drive.google.com/file/d/10406RCChnpnfCEFnLYWpkiVlnhHopNXK/view?usp=drive_link"
+      },
+      {
+        title: "The Forge (Anvil of Anger)",
+        src: "https://drive.google.com/file/d/1vC8dg0KViyzs2jGFzW7NhS_BvpgsUri4/view?usp=drive_link"
+      },
+      {
+        title: "The Quartermaster (Never Unarmed Again)",
+        src: "https://drive.google.com/file/d/1cBJU3TjXuMLtuq7diAsPUwfgplgXtOjT/view?usp=drive_link"
+      },
+      {
+        title: "The Spymaster (A Colder War)",
+        src: "https://drive.google.com/file/d/1enwAfvDTtjSk3BXqsjLIkM3f-h9YmGZv/view?usp=drive_link"
+      }
+    ]
   },
   story: {
     title: "The Journey Begins",

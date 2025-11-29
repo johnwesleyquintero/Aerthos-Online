@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,6 +59,16 @@
       }
       .animate-blink {
         animation: blink 1s step-end infinite;
+      }
+
+      /* Audio Equalizer Animation */
+      @keyframes equalizer {
+        0% { height: 3px; }
+        50% { height: 12px; }
+        100% { height: 3px; }
+      }
+      .animate-equalizer {
+        animation: equalizer 1s ease-in-out infinite;
       }
     </style>
   <script type="importmap">

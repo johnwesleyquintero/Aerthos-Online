@@ -41,3 +41,34 @@ export const resolveGoogleDriveLink = (input: string | undefined): string => {
   // 4. Return original if no processing needed (e.g. Unsplash link)
   return input;
 };
+
+/**
+ * Resolves Google Drive links specifically for AUDIO streaming.
+ * The thumbnail API doesn't work for MP3s, so we use the export=download endpoint.
+ */
+export const resolveGoogleDriveAudio = (input: string | undefined): string => {
+    if (!input) return '';
+    
+    let id = '';
+  
+    // 1. Check if it is a raw Google Drive ID
+    const isRawId = /^[a-zA-Z0-9_-]+$/.test(input);
+    
+    if (isRawId) {
+      id = input;
+    } 
+    // 2. If it's a full URL, attempt to extract the ID
+    else if (input.includes('drive.google.com')) {
+      const idMatch = input.match(/\/d\/([a-zA-Z0-9_-]+)/) || input.match(/id=([a-zA-Z0-9_-]+)/);
+      if (idMatch && idMatch[1]) {
+        id = idMatch[1];
+      }
+    }
+  
+    // 3. Construct the download link which works for audio tags
+    if (id) {
+      return `https://docs.google.com/uc?export=download&id=${id}`;
+    }
+  
+    return input;
+  };
