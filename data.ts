@@ -27,6 +27,7 @@ export const siteData = {
     // Using the raw Google Drive ID for optimization
     heroImage: "https://drive.google.com/file/d/1iJqBUlBwwVGhylobYqob5s6SEumdL1S5/view?usp=drive_link", 
     backgroundImage: "1bhts40yK9Evnuj8JkQnujXTDM-Mzmx1Q", // Background for the top section
+    loreLink: "https://cycleofrejection.netlify.app/", // Link to music/real life lore
   },
   story: {
     title: "The Journey Begins",

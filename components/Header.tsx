@@ -58,13 +58,24 @@ export const Header: React.FC = () => {
           {hero.description}
         </p>
 
-        <div className="mt-12 flex flex-col md:flex-row gap-4 justify-center">
-            <a href="#story" className="px-8 py-3 bg-slate-800 border border-slate-600 hover:border-cyan-400 text-cyan-400 font-bold rounded hover:bg-slate-700 transition-all duration-300">
+        <div className="mt-12 flex flex-col md:flex-row gap-4 justify-center items-center">
+            <a href="#story" className="w-full md:w-auto px-8 py-3 bg-slate-800 border border-slate-600 hover:border-cyan-400 text-cyan-400 font-bold rounded hover:bg-slate-700 transition-all duration-300">
                 Read Data Logs
             </a>
-            <a href="#abilities" className="px-8 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] transition-all duration-300">
+            <a href="#abilities" className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] transition-all duration-300">
                 View Specs
             </a>
+            {hero.loreLink && (
+              <a 
+                href={hero.loreLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-full md:w-auto px-8 py-3 bg-slate-900/80 border border-purple-500/50 hover:border-purple-400 text-purple-400 font-bold rounded hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2 group"
+              >
+                  <span>Real Life Lore</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            )}
         </div>
       </div>
       
