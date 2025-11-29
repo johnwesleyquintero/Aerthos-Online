@@ -25,7 +25,7 @@ export const siteData = {
     subtitle: "My Cheat Skill is Optimization!",
     description: "A tale of a modern-day strategist summoned to a world of magic, guilds, and ancient systems ripe for an upgrade.",
     // Using the raw Google Drive ID for optimization
-    heroImage: "https://drive.google.com/file/d/1iJqBUlBwwVGhylobYqob5s6SEumdL1S5/view?usp=drive_link", 
+    heroImage: "https://drive.google.com/file/d/1bhts40yK9Evnuj8JkQnujXTDM-Mzmx1Q/view?usp=drive_link", 
     backgroundImage: "1bhts40yK9Evnuj8JkQnujXTDM-Mzmx1Q", // Background for the top section
     loreLink: "https://cycleofrejection.netlify.app/", // Link to music/real life lore
   },
@@ -39,7 +39,7 @@ export const siteData = {
   world: {
     title: "Welcome to Aerthos",
     // Optional: Add a Google Drive link here for your specific world map
-    mapImage: "https://drive.google.com/file/d/1nCQ7GYA7t1d_pi3KBSN9XGzefw_eNiwQ/view?usp=drive_link", 
+    mapImage: "https://drive.google.com/file/d/1HYg2Xh7xTXX019xUXrpuvd7NvJzzYwOo/view?usp=drive_link", 
     content: [
       "Aerthos is a sprawling land of floating islands, bustling trade cities, and perilous dungeons. Ruled by a council of elemental monarchs and overseen by a fractured 'System of the World' (a cosmic backend that's been buggy for centuries), it's a place where adventurers thrive, mages wield raw power, and ancient evils stir.",
       "Our hero quickly discovered that his unique Earthly skills – strategic thinking, pattern recognition, and an innate desire to build scalable systems – were far more potent than any spell or sword in this new reality."
