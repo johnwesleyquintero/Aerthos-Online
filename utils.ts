@@ -1,4 +1,5 @@
 
+
 /**
  * Detects if a URL is a Google Drive "View" link or a raw File ID and converts it to a "Direct" link.
  * 
@@ -49,11 +50,18 @@ export const resolveGoogleDriveLink = (input: string | undefined): string => {
 export const resolveGoogleDriveAudio = (input: string | undefined): string => {
     if (!input) return '';
     
+    // PRIORITY: If it is a local path (starts with /), return immediately.
+    if (input.startsWith('/')) {
+        return input;
+    }
+    
     let id = '';
   
     // 1. Check if it is a raw Google Drive ID
     const isRawId = /^[a-zA-Z0-9_-]+$/.test(input);
     
+    // CAUTION: Filenames like "music.mp3" might pass the ID regex if we aren't careful, 
+    // but they usually have a dot. Our regex excludes dots.
     if (isRawId) {
       id = input;
     } 

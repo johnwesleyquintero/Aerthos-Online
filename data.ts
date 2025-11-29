@@ -36,19 +36,20 @@ export const siteData = {
     tracks: [
       {
         title: "The Advance Scout (The Cynic's Eyes)",
-        src: "https://drive.google.com/file/d/10406RCChnpnfCEFnLYWpkiVlnhHopNXK/view?usp=drive_link"
+        // optimization: Local files for production stability
+        src: "/music/advance_scout.mp3"
       },
       {
         title: "The Forge (Anvil of Anger)",
-        src: "https://drive.google.com/file/d/1vC8dg0KViyzs2jGFzW7NhS_BvpgsUri4/view?usp=drive_link"
+        src: "/music/the_forge.mp3"
       },
       {
         title: "The Quartermaster (Never Unarmed Again)",
-        src: "https://drive.google.com/file/d/1cBJU3TjXuMLtuq7diAsPUwfgplgXtOjT/view?usp=drive_link"
+        src: "/music/quartermaster.mp3"
       },
       {
         title: "The Spymaster (A Colder War)",
-        src: "https://drive.google.com/file/d/1enwAfvDTtjSk3BXqsjLIkM3f-h9YmGZv/view?usp=drive_link"
+        src: "/music/spymaster.mp3"
       }
     ]
   },
