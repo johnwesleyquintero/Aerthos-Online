@@ -48,7 +48,7 @@ const App: React.FC = () => {
                    <img 
                       src={mapImage} 
                       alt="World Map" 
-                      className="w-full h-full object-cover opacity-50 mix-blend-overlay hover:opacity-80 transition-opacity duration-500 relative z-10" 
+                      className="w-full h-full object-cover relative z-10" 
                    />
                 </div>
             </div>
