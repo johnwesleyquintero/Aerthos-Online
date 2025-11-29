@@ -36,6 +36,20 @@ A high-performance, immersive React landing page designed for fantasy storytelli
     npm run dev
     ```
 
+## ☁️ Deployment [System Launch]
+
+### Vercel (Recommended)
+This project includes a `vercel.json` configuration for seamless deployment.
+
+1.  Push your code to GitHub.
+2.  Log in to [Vercel](https://vercel.com).
+3.  Click **"Add New..."** -> **"Project"**.
+4.  Import your `aerthos-online` repository.
+5.  Vercel will automatically detect the framework settings.
+6.  Click **Deploy**.
+
+The `vercel.json` file ensures that if you add client-side routing later (e.g., React Router), your app won't 404 on page refresh.
+
 ## 🛠️ Configuration [System Admin]
 
 ### Editing Content
@@ -66,6 +80,7 @@ To use images hosted on Google Drive within this app:
 ├── data.ts           # CENTRAL CONFIGURATION FILE
 ├── index.tsx         # Entry point
 ├── index.html        # HTML template
+├── vercel.json       # Deployment config
 └── README.md         # Documentation
 ```
 
