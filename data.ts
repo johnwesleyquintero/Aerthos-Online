@@ -7,7 +7,7 @@ export interface Ability {
   id: string;
   name: string;
   description: string;
-  icon: string; // Emoji or SVG path identifier
+  icon: string; // Icon name (mapped in Icon.tsx)
   rarity: 'common' | 'rare' | 'epic' | 'legendary';
 }
 
@@ -38,7 +38,7 @@ export const siteData = {
   world: {
     title: "Welcome to Aerthos",
     // Optional: Add a Google Drive link here for your specific world map
-    mapImage: "https://picsum.photos/600/400?grayscale&blur=2", 
+    mapImage: "https://drive.google.com/file/d/12uaHIJ4OajzY1862Fn7Ydrjrzy512-pF/view?usp=sharing", 
     content: [
       "Aerthos is a sprawling land of floating islands, bustling trade cities, and perilous dungeons. Ruled by a council of elemental monarchs and overseen by a fractured 'System of the World' (a cosmic backend that's been buggy for centuries), it's a place where adventurers thrive, mages wield raw power, and ancient evils stir.",
       "Our hero quickly discovered that his unique Earthly skills – strategic thinking, pattern recognition, and an innate desire to build scalable systems – were far more potent than any spell or sword in this new reality."
@@ -49,28 +49,28 @@ export const siteData = {
       id: "1",
       name: "[System Analysis]",
       description: "Instantly perceive underlying data structures, resource flows, and operational inefficiencies of any system, magical or mundane.",
-      icon: "👁️",
+      icon: "eye",
       rarity: "legendary"
     },
     {
       id: "2",
       name: "[Generalist Codex]",
       description: "Passive skill granting accelerated learning. If there is a pattern, he can optimize the learning curve.",
-      icon: "📚",
+      icon: "book",
       rarity: "epic"
     },
     {
       id: "3",
       name: "[Resource Optimization]",
       description: "Enables efficient allocation of mana, gold, and materials. Turns scarcity into abundance.",
-      icon: "⚖️",
+      icon: "scale",
       rarity: "rare"
     },
     {
       id: "4",
       name: "[Scalable Architecture]",
       description: "Design and implement robust, future-proof systems for guilds or kingdoms.",
-      icon: "🏛️",
+      icon: "castle",
       rarity: "rare"
     }
   ] as Ability[],

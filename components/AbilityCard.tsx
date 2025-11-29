@@ -1,5 +1,6 @@
 import React from 'react';
 import { Ability } from '../data';
+import { Icon } from './Icon';
 
 interface AbilityCardProps {
   ability: Ability;
@@ -27,7 +28,9 @@ export const AbilityCard: React.FC<AbilityCardProps> = ({ ability }) => {
   return (
     <div className={`group relative bg-slate-800/80 backdrop-blur-sm border-2 ${getBorderColor(ability.rarity)} rounded-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:bg-slate-800`}>
       <div className="flex items-center justify-between mb-4">
-        <div className="text-4xl filter drop-shadow-md">{ability.icon}</div>
+        <div className={`p-3 rounded-lg bg-slate-900/60 border border-white/5 shadow-inner`}>
+           <Icon name={ability.icon} size={32} className={`filter drop-shadow-md transition-transform group-hover:scale-110 duration-300 ${getTextColor(ability.rarity)}`} />
+        </div>
         <span className={`text-xs uppercase tracking-widest font-bold px-2 py-1 rounded bg-black/40 ${getTextColor(ability.rarity)}`}>
           {ability.rarity}
         </span>
