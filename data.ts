@@ -99,7 +99,7 @@ export const siteData = {
     },
     {
       id: "c3",
-      name: "Mina",
+      name: "Mayne",
       role: "The Market Analyst",
       description: "A sharp-witted merchant who knew market trends but struggled to scale her operations.",
       image: "https://drive.google.com/file/d/1o2-hn8jGVI7-K7dJ7J2gHaYfZ6XpBf1V/view?usp=drive_link"
