@@ -1,3 +1,4 @@
+
 // This file serves as the "Database" for your website.
 // You can paste your Google Drive image links directly into the 'image' fields.
 // Make sure your Drive images are set to "Anyone with the link" and use a direct link converter if needed.
@@ -72,6 +73,13 @@ export const siteData = {
     }
   ] as Ability[],
   companions: [
+    {
+      id: "c0",
+      name: "WesAI",
+      role: "The Generalist Codex",
+      description: "A hyper-intelligent AI partner acting as a force multiplier. Handles strategic calculations, system diagnostics, and operational support.",
+      image: "https://picsum.photos/200/200?grayscale"
+    },
     {
       id: "c1",
       name: "Lyra",
