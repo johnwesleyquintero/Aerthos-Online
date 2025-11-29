@@ -1,93 +1,106 @@
-# Aerthos Online | System Architect Portfolio
+# Aerthos Online | System Architect Interface
 
 > "Reborn as a System Architect: My Cheat Skill is Optimization!"
 
-A high-performance, immersive React landing page designed for fantasy storytelling, portfolios, or game introductions. Built with **React**, **TypeScript**, and **Tailwind CSS**.
+**Aerthos Online** is a high-performance, immersive React web application designed as a "System Interface" for a fantasy isekai narrative. It serves as a dynamic landing page, portfolio, and lore hub, featuring real-time UI simulations, audio visualization, and modular data management.
 
 ![System Status](https://img.shields.io/badge/SYSTEM-ONLINE-success?style=for-the-badge)
-![Tech Stack](https://img.shields.io/badge/REACT-TYPESCRIPT-blue?style=for-the-badge)
+![Core](https://img.shields.io/badge/REACT_19-VITE-cyan?style=for-the-badge)
+![Style](https://img.shields.io/badge/TAILWIND-CSS-blue?style=for-the-badge)
 
-## ⚔️ Features
+---
 
-*   **Modular Data System:** All content (text, stats, abilities, companions) is managed in a single `data.ts` file. No need to dig through components to change text.
-*   **Epic UI/UX:** Glassmorphism effects, RPG-style ability cards, and responsive "System" aesthetics using Tailwind CSS.
-*   **Asset Management:** Easy integration for external image hosting (Google Drive, Imgur, Unsplash).
-*   **Type-Safe:** Built with TypeScript for robust development.
+## ⚡ System Modules & Features
 
-## 🚀 Quick Start [Initialization]
+### 1. The "Cheat Skill" Architecture
+The application is built to be **Generalist & Modular**. Instead of hardcoded text, the entire application state is driven by a single "Database" file.
+*   **Centralized Data (`data.ts`):** Controls all lore, character stats, abilities, music tracks, and external links. Updating the story is as simple as editing a JSON object.
+*   **Asset Optimization (`utils.ts`):** Includes a custom engine to resolve Google Drive links.
+    *   *Images:* Automatically converts Drive view links to the high-performance `thumbnail` API (4K resolution support) to bypass bandwidth limits.
+    *   *Audio:* Intelligently routes audio streams via the `export=download` endpoint for HTML5 Audio compatibility.
 
+### 2. Immersive UI Components
+*   **System HUD:** A fixed heads-up display tracking "System Time", scroll progress (rendering), and navigation status.
+*   **System Logger:** An ambient notification system that pushes "alerts" and "optimization updates" to the user, simulating a living AI interface.
+*   **Audio Controller:** A persistent music player with simulated equalizer animations, volume control, and auto-play logic for the soundtrack.
+*   **Visual Effects:**
+    *   `ParticleBackground.tsx`: Custom canvas-based particle physics.
+    *   `Icon.tsx`: SVG path rendering for ability icons.
+    *   CSS Animations: Scanlines, pulses, glows, and typewriter effects.
+
+---
+
+## 🛠️ Initialization (Local Development)
+
+This project uses **Vite** for lightning-fast HMR (Hot Module Replacement) and **TypeScript** for type safety.
+
+### Prerequisites
+*   Node.js (v18+ recommended)
+
+### Sequence
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/your-username/aerthos-online.git
+    git clone <repository-url>
     cd aerthos-online
     ```
 
 2.  **Install Dependencies**
     ```bash
     npm install
-    # or
-    yarn install
     ```
 
-3.  **Run Development Server**
+3.  **Initialize Dev Server**
     ```bash
-    npm start
-    # or
     npm run dev
     ```
 
-## ☁️ Deployment [System Launch]
-
-### Vercel (Recommended)
-This project includes a `vercel.json` configuration for seamless deployment.
-
-1.  Push your code to GitHub.
-2.  Log in to [Vercel](https://vercel.com).
-3.  Click **"Add New..."** -> **"Project"**.
-4.  Import your `aerthos-online` repository.
-5.  Vercel will automatically detect the framework settings.
-6.  Click **Deploy**.
-
-The `vercel.json` file ensures that if you add client-side routing later (e.g., React Router), your app won't 404 on page refresh.
-
-## 🛠️ Configuration [System Admin]
-
-### Editing Content
-Navigate to `data.ts` in the root directory. This file acts as your "Database". You can modify:
-
-*   **Hero Section:** Title, subtitle, background images.
-*   **Story & World:** Lore text paragraphs.
-*   **Abilities:** Add/Remove skills, change icons (emojis or text), and set rarity ('common', 'rare', 'epic', 'legendary').
-*   **Companions:** Update party members and their roles.
-
-### Using Google Drive Images
-To use images hosted on Google Drive within this app:
-
-1.  Upload your image to Google Drive.
-2.  Right-click the file and select **Share** -> **General Access** -> **Anyone with the link**.
-3.  Copy the link.
-4.  **Important:** Google Drive "View" links do not work directly in `<img>` tags. You must convert them to "Direct" links.
-    *   *Link format:* `https://drive.google.com/uc?export=view&id=YOUR_FILE_ID`
-    *   You can use a free online "Google Drive Direct Link Generator" to do this easily.
-5.  Paste the **Direct Link** into the `image` or `heroImage` fields in `data.ts`.
-
-## 📂 Project Structure
-
-```text
-/
-├── components/       # UI Components (AbilityCard, Header, etc.)
-├── App.tsx           # Main application layout
-├── data.ts           # CENTRAL CONFIGURATION FILE
-├── index.tsx         # Entry point
-├── index.html        # HTML template
-├── vercel.json       # Deployment config
-└── README.md         # Documentation
-```
-
-## 📜 License
-
-Designed by **WesAI** for **John Wesley Quintero**.
-Open source for educational and portfolio usage.
+4.  **Build for Production**
+    ```bash
+    npm run build
+    ```
 
 ---
-*System Message: Optimization Complete.*
+
+## 📂 Data Management (The "Database")
+
+To modify the content, navigate to `data.ts`.
+
+```typescript
+export const siteData = {
+  hero: {
+    // Modify the main title and background here
+    title: "Reborn as a System Architect",
+    backgroundImage: "GOOGLE_DRIVE_LINK_OR_ID"
+  },
+  soundtrack: {
+    // Add mp3 links here. The AudioController automatically picks them up.
+    tracks: [ ... ]
+  },
+  abilities: [
+    // Define the RPG skills displayed on cards
+    {
+      name: "[System Analysis]",
+      rarity: "legendary", // Controls border colors (Gold/Purple/Blue)
+      ...
+    }
+  ],
+  // ... World lore, Companions, CTA
+};
+```
+
+---
+
+## 🎨 Styling & Assets
+
+*   **Tailwind CSS:** Used for utility-first styling. Configured via CDN in `index.html` for rapid prototyping in cloud environments, or standard PostCSS in local builds.
+*   **Fonts:** 'Inter' (UI), 'Bebas Neue' (Headers), and 'Press Start 2P' (System Text).
+*   **Icons:** Custom SVG components located in `components/Icon.tsx`.
+
+---
+
+## 📜 License & Credits
+
+**Architect:** WesAI (v2.2)  
+**Operator:** John Wesley Quintero
+
+*Designed for the Aerthos Project. Unauthorized system intrusion will be met with immediate firewall countermeasures.*
